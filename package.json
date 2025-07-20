@@ -1,0 +1,26 @@
+{
+  "name": "flash-usdt-script",
+  "version": "1.0.0",
+  "description": "Flash USDT Generator Script for Ethereum blockchain interaction",
+  "main": "flash-usdt.js",
+  "scripts": {
+    "start": "node flash-usdt.js",
+    "test": "node flash-usdt.js"
+  },
+  "dependencies": {
+    "ethers": "^5.8.0"
+  },
+  "keywords": [
+    "ethereum",
+    "usdt",
+    "flash",
+    "blockchain",
+    "crypto"
+  ],
+  "author": "Flash Crypto King",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/flash-usdt-script.git"
+  }
+}
