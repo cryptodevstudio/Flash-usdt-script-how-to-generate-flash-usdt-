@@ -1,0 +1,26 @@
+{
+  "name": "flash-usdt-generator",
+  "version": "1.0.0",
+  "description": "Flash USDT Generator Script - Simulates the generation of Flash USDT using the Ethereum blockchain",
+  "main": "flash-usdt.js",
+  "scripts": {
+    "start": "node flash-usdt.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "ethers": "^6.15.0"
+  },
+  "keywords": [
+    "ethereum",
+    "usdt",
+    "blockchain",
+    "ethers",
+    "cryptocurrency",
+    "flash"
+  ],
+  "author": "Flash Crypto King",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
